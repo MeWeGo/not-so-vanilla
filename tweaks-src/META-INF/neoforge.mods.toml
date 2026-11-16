@@ -1,0 +1,7 @@
+modLoader = 'javafml'
+loaderVersion = '[1,)'
+license = 'MIT'
+showAsResourcePack = false
+mods = [
+	{ modId = 'grounded_tweaks', version = '1.4.3', displayName = 'Grounded Tweaks', description = 'Pack tuning for Grounded: slower base walking speed, Medical System limbs for MCA humans, one-time Food Book + Lunchbag, limbs for Variants&Ventures undead, one-time illustrated field medicine book, working Lunchbag and Food Book recipes.' },
+]

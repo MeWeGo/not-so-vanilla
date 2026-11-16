@@ -1,0 +1,13 @@
+# Gradle and build output
+.gradle/
+build/
+run-*/
+*.log
+
+# Built modpack files (published on Modrinth instead)
+dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/

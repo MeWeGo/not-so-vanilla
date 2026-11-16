@@ -1,0 +1,7 @@
+{
+  "entity.grounded_bandits.bandit": "Bandit",
+  "entity.grounded_bandits.bandit_marksman": "Bandit Marksman",
+  "entity.grounded_bandits.survivor": "Survivor",
+  "entity.grounded_bandits.survivor.traded": "The survivor takes the food and hands you something from their kit.",
+  "entity.grounded_bandits.survivor.nothing_left": "\"I've nothing left to trade. Come back later.\""
+}

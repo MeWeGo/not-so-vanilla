@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:glass_bottle",
+    "#grounded_survival:juice_fruits",
+    "#grounded_survival:juice_fruits",
+    "#grounded_survival:juice_fruits"
+  ],
+  "result": {
+    "id": "grounded_survival:fruit_juice",
+    "count": 1
+  }
+}

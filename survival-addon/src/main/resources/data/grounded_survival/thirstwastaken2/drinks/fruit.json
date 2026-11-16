@@ -1,0 +1,16 @@
+{
+  "values": {
+    "grounded_survival:fruit_juice": {
+      "thirst": 3,
+      "quenched": 0
+    },
+    "saros_fruit_trees_mod:orange": {
+      "thirst": 2,
+      "quenched": 0
+    },
+    "saros_fruit_trees_mod:pear": {
+      "thirst": 2,
+      "quenched": 0
+    }
+  }
+}

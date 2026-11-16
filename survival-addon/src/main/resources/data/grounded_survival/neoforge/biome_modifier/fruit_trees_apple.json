@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "saros_fruit_trees_mod"
+    }
+  ],
+  "type": "neoforge:add_features",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      "#c:is_forest",
+      "#c:is_plains"
+    ]
+  },
+  "features": [
+    "saros_fruit_trees_mod:apple_1",
+    "saros_fruit_trees_mod:apple_2",
+    "saros_fruit_trees_mod:apple_3",
+    "saros_fruit_trees_mod:apple_4",
+    "saros_fruit_trees_mod:apple_5"
+  ],
+  "step": "surface_structures"
+}

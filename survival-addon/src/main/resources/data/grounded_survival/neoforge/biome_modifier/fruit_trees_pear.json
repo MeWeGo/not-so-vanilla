@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "saros_fruit_trees_mod"
+    }
+  ],
+  "type": "neoforge:add_features",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      "#c:is_forest",
+      "#c:is_plains",
+      "minecraft:meadow"
+    ]
+  },
+  "features": [
+    "saros_fruit_trees_mod:pear"
+  ],
+  "step": "surface_structures"
+}

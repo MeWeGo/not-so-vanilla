@@ -1,0 +1,4 @@
+{
+  "criteria": { "joined": { "trigger": "minecraft:tick" } },
+  "rewards": { "function": "grounded:starter_kit" }
+}

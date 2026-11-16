@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "grounded_survival:item/water_bowl_purity_1"
+  }
+}

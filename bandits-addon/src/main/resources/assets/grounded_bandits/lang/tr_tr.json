@@ -1,0 +1,7 @@
+{
+  "entity.grounded_bandits.bandit": "Haydut",
+  "entity.grounded_bandits.bandit_marksman": "Haydut Nişancı",
+  "entity.grounded_bandits.survivor": "Hayatta Kalan",
+  "entity.grounded_bandits.survivor.traded": "Hayatta kalan yemeği alıp çantasından bir şey uzatıyor.",
+  "entity.grounded_bandits.survivor.nothing_left": "\"Verecek bir şeyim kalmadı. Sonra gel.\""
+}

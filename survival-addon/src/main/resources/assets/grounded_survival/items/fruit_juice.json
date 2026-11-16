@@ -1,0 +1,16 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "grounded_survival:item/fruit_juice",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": -1144278
+      },
+      {
+        "type": "minecraft:constant",
+        "value": -1
+      }
+    ]
+  }
+}

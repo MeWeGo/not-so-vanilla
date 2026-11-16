@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "saros_fruit_trees_mod"
+    }
+  ],
+  "type": "neoforge:add_features",
+  "biomes": {
+    "type": "neoforge:or",
+    "values": [
+      "#c:is_savanna",
+      "#c:is_plains"
+    ]
+  },
+  "features": [
+    "saros_fruit_trees_mod:orangen_1",
+    "saros_fruit_trees_mod:oragen_2",
+    "saros_fruit_trees_mod:orangen_3",
+    "saros_fruit_trees_mod:orangen_4"
+  ],
+  "step": "surface_structures"
+}

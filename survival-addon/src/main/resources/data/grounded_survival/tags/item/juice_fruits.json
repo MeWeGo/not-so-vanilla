@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:apple",
+    "minecraft:melon_slice",
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    {
+      "id": "saros_fruit_trees_mod:orange",
+      "required": false
+    },
+    {
+      "id": "saros_fruit_trees_mod:pear",
+      "required": false
+    }
+  ]
+}
