@@ -5,6 +5,7 @@ dependencies) from the Modrinth API, then writes one .mrpack per stage.
 Each stage contains everything from the stages before it.
 
 Usage:  python build_pack.py [26.2|1.21.1]   -> writes dist/<version>/*.mrpack and lock.json (default 26.2)
+For 26.2 it also writes the public release, dist/not-so-vanilla-<RELEASE_VERSION>.mrpack (the full last stage).
 Import the .mrpack into Prism Launcher or the Modrinth App.
 """
 import hashlib, json, os, sys, urllib.request, urllib.parse, zipfile
@@ -45,6 +46,10 @@ NEOFORGE = PROFILES[MC]["neoforge"]
 STAGES = PROFILES[MC]["stages"]
 ALT_STAGE = PROFILES[MC]["alt"]
 UA = "grounded-modpack-builder/1.0"
+# Public release published on Modrinth (built from the last 26.2 stage). Bump for every upload.
+RELEASE_NAME = "Not So Vanilla"
+RELEASE_VERSION = "1.0.2"
+RELEASE_SUMMARY = "Minecraft, but you're 9 again. The night is scary, the world is huge, and you don't know how anything works."
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist", MC)
 
@@ -94,11 +99,11 @@ def resolve(slug_or_id, out, chain=()):
             resolve(d["project_id"], out, chain + (proj["slug"],))
 
 
-def write_pack(stem, name, mods, override_dirs):
+def write_pack(stem, name, mods, override_dirs, path=None, summary=None):
     os.makedirs(DIST, exist_ok=True)
     index = {
         "formatVersion": 1, "game": "minecraft", "versionId": stem, "name": name,
-        "summary": "Grounded, Tarkov-inspired survival for NeoForge " + MC + " (staged build)",
+        "summary": summary or "Grounded, Tarkov-inspired survival for NeoForge " + MC + " (staged build)",
         "files": [{
             "path": f"{m.get('folder', 'mods')}/{m['file']}",
             "hashes": {"sha1": m["hashes"]["sha1"], "sha512": m["hashes"]["sha512"]},
@@ -108,7 +113,7 @@ def write_pack(stem, name, mods, override_dirs):
         } for m in mods.values()],
         "dependencies": {"minecraft": MC, "neoforge": NEOFORGE},
     }
-    path = os.path.join(DIST, f"grounded-{stem}.mrpack")
+    path = path or os.path.join(DIST, f"grounded-{stem}.mrpack")
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("modrinth.index.json", json.dumps(index, indent=2))
         for od in override_dirs:
@@ -130,6 +135,9 @@ def main():
         lock[stem] = [m["slug"] for m in mods.values()]
         if stem == "2-survival":
             after_s2, ov_s2 = dict(mods), list(overrides)
+    if MC == "26.2":
+        write_pack(RELEASE_VERSION, RELEASE_NAME, dict(mods), list(overrides),
+                   path=os.path.join(ROOT, "dist", f"not-so-vanilla-{RELEASE_VERSION}.mrpack"), summary=RELEASE_SUMMARY)
     alt = {}
     if ALT_STAGE:
         stem, name, slugs, ods = ALT_STAGE
