@@ -7,7 +7,7 @@
     "dimension": "minecraft:overworld",
     "mob": "grounded_bandits:survivor",
     "mincount": {
-      "amount": 3,
+      "amount": 1,
       "mob": "grounded_bandits:survivor",
       "perplayer": true
     },
@@ -16,8 +16,41 @@
   {
     "dimension": "minecraft:overworld",
     "mob": "grounded_bandits:survivor",
-    "random": 0.6,
+    "random": 0.85,
     "result": "deny"
+  },
+  {
+    "dimension": "minecraft:overworld",
+    "mob": [
+      "grounded_bandits:bandit",
+      "grounded_bandits:bandit_marksman"
+    ],
+    "mincount": {
+      "amount": 2,
+      "mob": [
+        "grounded_bandits:bandit",
+        "grounded_bandits:bandit_marksman"
+      ],
+      "perplayer": true
+    },
+    "result": "deny"
+  },
+  {
+    "dimension": "minecraft:overworld",
+    "mob": [
+      "grounded_bandits:bandit",
+      "grounded_bandits:bandit_marksman"
+    ],
+    "random": 0.75,
+    "result": "deny"
+  },
+  {
+    "dimension": "minecraft:overworld",
+    "mob": [
+      "grounded_bandits:bandit",
+      "grounded_bandits:bandit_marksman"
+    ],
+    "result": "default"
   },
   {
     "dimension": "minecraft:overworld",

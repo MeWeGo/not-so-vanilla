@@ -42,7 +42,7 @@ You didn't know how to make a bed. The dark was terrifying. Every noise behind y
 
 ## ✨ Looks and feels great
 
-- **Shaders included** (Complementary Reimagined), with northern lights and a starry sky on cold nights, plus a smooth, natural-feeling camera and 3D skin layers.
+- **Shaders included** (Complementary Reimagined), with northern lights on full-moon nights and a sky full of stars, plus a smooth, natural-feeling camera and 3D skin layers.
 - **Better animations** and on-screen damage effects. Getting hit, and getting blood on your screen, feels like it.
 - **Performance mods built in**, so it runs well despite everything above.
 

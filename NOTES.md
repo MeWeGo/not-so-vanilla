@@ -59,6 +59,7 @@ I checked every mod across all releases from 1.21.5 to 26.3.
 - Mob spawners are left untouched.
 - Overworld hostiles are capped at 30.
 - 40% of natural overworld hostile spawns are denied.
+- Bandits and survivors have their own limits; see *Human spawn limits* below.
 
 **Uncertainty (26.2):** the pack deliberately hides information.
 - **No AppleSkin**, so you don't see exact food or saturation values.
@@ -116,10 +117,14 @@ The pack also gains two mods:
 - **3D Skin Layers** and **Not Enough Animations** (client only).
 - **Enhanced Visuals:** blood on the screen, a heartbeat at low health, blur from explosions. Check in game whether it overlaps with Medical System's screen effects.
 - **Lithium:** game-logic optimisation.
-- **Survivor spawn limits (In Control `spawn.json`):**
+- **Human spawn limits (In Control `spawn.json`, pack default since 2026-11-17):**
   - Survivors don't count as hostile, so the hostile cap and the 40% thinning missed them, and by day they filled the surface.
-  - They now have their own rules: at most 3 per player at a time, and 60% of their natural spawns denied.
-  - In Control loads the rules without errors. The real spawn rate needs checking in game.
+  - Bandits did count as hostile, so by day the 30-hostile cap (full of cave mobs) and the 40% thinning blocked most of them.
+  - Each now has its own rules, checked before the general hostile rules. In Control uses the first rule that matches.
+    - **Survivors:** at most 1 per player, 85% of natural spawns denied.
+    - **Bandits and marksmen:** at most 2 per player, 75% denied, exempt from the hostile cap.
+  - With the biome weights (bandits 4 + marksmen 2, survivors 3), a spawn attempt yields a bandit roughly three times as often as a survivor.
+  - In Control reloads the rules without errors on the dedicated server. The real spawn rate needs checking in game.
 - **Structure density: back to each mod's own rules.**
   - Sparse Structures `spreadFactor` is 1.0, with the mansion factor at 1. That is no extra spreading; the mod only keeps its per-structure salt so different structure sets overlap less.
   - The Towns and Towers tower frequency is back to its default of 0.2.
